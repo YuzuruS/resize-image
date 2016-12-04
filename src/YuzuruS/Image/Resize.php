@@ -120,7 +120,7 @@ class Resize {
     }
 
     /**
-     *
+     * show
      */
     public function show()
     {
