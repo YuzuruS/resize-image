@@ -1,11 +1,20 @@
 The PHP library can easily resize images.
 =============================
-
 [![Coverage Status](https://coveralls.io/repos/github/YuzuruS/resize-image/badge.svg?branch=master)](https://coveralls.io/github/YuzuruS/resize-image?branch=master)
 [![Build Status](https://travis-ci.org/YuzuruS/resize-image.png?branch=master)](https://travis-ci.org/YuzuruS/resize-image)
 [![Stable Version](https://poser.pugx.org/yuzuru-s/resize-image/v/stable)](https://packagist.org/packages/yuzuru-s/resize-image)
 [![Download Count](https://poser.pugx.org/yuzuru-s/resize-image/downloads.png)](https://packagist.org/packages/yuzuru-s/resize-image)
 [![License](https://poser.pugx.org/yuzuru-s/resize-image/license)](https://packagist.org/packages/yuzuru-s/resize-image)
+
+The PHP library can easily resize images and allows you to adjust the height and width of the image and clip it.
+
+Examples
+-----------------------------
+![example-org](https://cloud.githubusercontent.com/assets/1485195/20863745/c67e3700-ba18-11e6-958c-520e763aae43.jpg)
+
+![example-20percent-test](https://cloud.githubusercontent.com/assets/1485195/20863749/d3341a6e-ba18-11e6-960d-d78cce54a082.jpg)
+
+
 
 Requirements
 -----------------------------
@@ -36,30 +45,6 @@ How to use
 ----------------------------
 Please check [sample code](https://github.com/YuzuruS/resize-image/blob/master/sample/usecase.php)
 
-```php
-<?php
-require __DIR__ . '/../vendor/autoload.php';
-use YuzuruS\Wordpress\Post;
-
-// endpoint → example.com
-$wp = new Post(getenv(WP_USERNAME), getenv(WP_PASSWD), getenv(WP_ENDPOINT));
-
-$res = $wp->makeCategories([
-	['name' => 'かて1', 'slug' => 'cate1'],
-	['name' => 'かて2', 'slug' => 'cate2'],
-]);
-
-$wp
-	->setTitle('たいとる')
-	->setDescription('本文')
-	->setKeywords(['key1','key2'])
-	->setCategories(['かて1','かて2'])
-	->setDate('2016-11-11')
-	->setWpSlug('entry')
-	->setThumbnail('https://www.pakutaso.com/shared/img/thumb/SAYA160312500I9A3721_TP_V.jpg')
-	->post();
-
-```
 
 
 How to run unit test
