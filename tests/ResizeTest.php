@@ -16,7 +16,7 @@ class ResizeTest extends \PHPUnit_Framework_TestCase
 	{
 		// resize width 100px
 		$image = new Resize(__DIR__ . '/../sample/example-org.jpg');
-		$image->dir(__DIR__ . '/../sample/output/');
+		$image->dir(__DIR__ . '/../sample/output');
 		$image->name('example-width-height-test');
 		$image->quality(80);
 		$image->width(100);
@@ -29,7 +29,7 @@ class ResizeTest extends \PHPUnit_Framework_TestCase
 	{
 		// resize 20%
 		$image = new Resize(__DIR__ . '/../sample/example-org.jpg');
-		$image->dir(__DIR__ . '/../sample/output/');
+		$image->dir(__DIR__ . '/../sample/output');
 		$image->name('example-20percent-test');
 		$image->resize(25);
 		$image->save();
@@ -39,7 +39,7 @@ class ResizeTest extends \PHPUnit_Framework_TestCase
 	public function testCrop()
 	{
 		$image = new Resize(__DIR__ . '/../sample/example-org.jpg');
-		$image->dir(__DIR__ . '/../sample/output/');
+		$image->dir(__DIR__ . '/../sample/output');
 		$image->name('example-cut-test');
 		$image->width(320);
 		$image->height(320);
@@ -53,7 +53,7 @@ class ResizeTest extends \PHPUnit_Framework_TestCase
 	{
 		// resize width 100px
 		$image = new Resize(__DIR__ . '/../sample/example-org.png');
-		$image->dir(__DIR__ . '/../sample/output/');
+		$image->dir(__DIR__ . '/../sample/output');
 		$image->name('example-png');
 		$image->width(100);
 		$image->height(100);
@@ -65,7 +65,7 @@ class ResizeTest extends \PHPUnit_Framework_TestCase
 	{
 		// resize width 100px
 		$image = new Resize(__DIR__ . '/../sample/example-org.gif');
-		$image->dir(__DIR__ . '/../sample/output/');
+		$image->dir(__DIR__ . '/../sample/output');
 		$image->name('example-gif');
 		$image->width(100);
 		$image->height(100);
