@@ -1,0 +1,6 @@
+vendor
+composer.phar
+clover.xml
+build
+sample/output
+!.empty

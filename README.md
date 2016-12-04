@@ -1,26 +1,89 @@
-exp1) resize width 100px<br> 
-$imgObj = new Image('exp.jpg');<br> 
-$imgObj->width(100);<br>
-$imgObj->save();<br><br>
+The PHP library can easily resize images.
+=============================
 
-exp2) resize 20%<br>
-$imgObj = new Image('exp.jpg'); <br>
-$imgObj->resize(25);<br>
-$imgObj->save();<br><br>
+[![Coverage Status](https://coveralls.io/repos/github/YuzuruS/resize-image/badge.svg?branch=master)](https://coveralls.io/github/YuzuruS/resize-image?branch=master)
+[![Build Status](https://travis-ci.org/YuzuruS/resize-image.png?branch=master)](https://travis-ci.org/YuzuruS/resize-image)
+[![Stable Version](https://poser.pugx.org/yuzuru-s/resize-image/v/stable)](https://packagist.org/packages/yuzuru-s/resize-image)
+[![Download Count](https://poser.pugx.org/yuzuru-s/resize-image/downloads.png)](https://packagist.org/packages/yuzuru-s/resize-image)
+[![License](https://poser.pugx.org/yuzuru-s/resize-image/license)](https://packagist.org/packages/yuzuru-s/resize-image)
 
-exp3) cut (0,30,32,32)<br>
-$imgObj = new Image('exp.jpg');<br> 
-$imgObj->name('exp2');<br> 
-$imgObj->width(32);<br> 
-$imgObj->height(32);<br> 
-$imgObj->crop(0,30);<br> 
-$imgObj->save();<br><br>
+Requirements
+-----------------------------
+- PHP
+  - >=5.4 >=5.5 >=5.6, >=7.0
+- Composer
 
-exp4) rename<br>
-$imgObj = new Image('exp.jpg'); <br>
-$imgObj->name('exp2');<br>
-$imgObj->width(200); <br>
-$imgObj->save();<br><br>
 
-sample)<br>
-$ php example.php example.jpg
+
+Installation
+----------------------------
+
+* Using composer
+
+```
+{
+    "require": {
+       "yuzuru-s/resize-image": "1.0.*"
+    }
+}
+```
+
+```
+$ php composer.phar update yuzuru-s/resize-image --dev
+```
+
+How to use
+----------------------------
+Please check [sample code](https://github.com/YuzuruS/resize-image/blob/master/sample/usecase.php)
+
+```php
+<?php
+require __DIR__ . '/../vendor/autoload.php';
+use YuzuruS\Wordpress\Post;
+
+// endpoint → example.com
+$wp = new Post(getenv(WP_USERNAME), getenv(WP_PASSWD), getenv(WP_ENDPOINT));
+
+$res = $wp->makeCategories([
+	['name' => 'かて1', 'slug' => 'cate1'],
+	['name' => 'かて2', 'slug' => 'cate2'],
+]);
+
+$wp
+	->setTitle('たいとる')
+	->setDescription('本文')
+	->setKeywords(['key1','key2'])
+	->setCategories(['かて1','かて2'])
+	->setDate('2016-11-11')
+	->setWpSlug('entry')
+	->setThumbnail('https://www.pakutaso.com/shared/img/thumb/SAYA160312500I9A3721_TP_V.jpg')
+	->post();
+
+```
+
+
+How to run unit test
+----------------------------
+
+Run with default setting.
+```
+% vendor/bin/phpunit -c phpunit.xml.dist
+```
+
+Currently tested with PHP 7.0.0
+
+
+History
+----------------------------
+
+
+
+
+License
+----------------------------
+Copyright (c) 2016 YUZURU SUZUKI. See MIT-LICENSE for further details.
+
+Copyright
+-----------------------------
+- Yuzuru Suzuki
+  - http://yuzurus.hatenablog.jp/
