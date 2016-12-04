@@ -2,5 +2,5 @@ vendor
 composer.phar
 clover.xml
 build
-sample/output
+sample/output/*
 !.empty
